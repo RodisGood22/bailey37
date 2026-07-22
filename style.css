@@ -2002,42 +2002,60 @@ body {
 }
 }
 
+
 }
-/* =========================
-   MOBILE REMOVE ENVELOPE GRAPHIC
-   KEEP MESSAGE + BUTTON
-========================= */
+/* ==========================================
+   MOBILE OPENING PAGE - REMOVE ENVELOPE ONLY
+========================================== */
 
 @media (max-width:650px) {
 
-    /* Hide only the envelope background/shape */
+    /* Center the content area */
+    .envelope-container {
+        min-height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:20px;
+    }
+
+
+    /* Keep envelope as a wrapper only */
     .envelope {
-        background: transparent !important;
-        box-shadow: none !important;
-        animation: none !important;
+
+        width:100% !important;
+        height:auto !important;
+
+        background:none !important;
+
+        box-shadow:none !important;
+
+        animation:none !important;
+
+        border-radius:0 !important;
+
     }
 
 
-    /* Remove flap */
-    .flap {
-        display:none !important;
-    }
-
-
-    /* Remove seal */
+    /* Hide envelope pieces */
+    .flap,
     .seal {
+
         display:none !important;
+
     }
 
 
-    /* Keep the letter visible */
+    /* Turn the letter into the visible card */
     .letter {
 
         position:relative !important;
 
-        width:90% !important;
+        width:100% !important;
 
         max-width:360px;
+
+        height:auto;
 
         left:auto !important;
 
@@ -2045,43 +2063,41 @@ body {
 
         margin:auto;
 
+        padding:30px 20px;
+
         transform:none !important;
 
+        background:#fffaf5;
+
+        border-radius:25px;
+
         box-shadow:
-        0 15px 40px rgba(0,0,0,.12);
+        0 20px 50px rgba(0,0,0,.15);
+
+        z-index:1;
 
     }
 
 
-    /* Keep button visible */
+    /* Stop the open animation moving it */
+    .envelope.open .letter {
+
+        transform:none !important;
+
+    }
+
+
+    /* Button stays normal */
     .letter button {
 
         display:block;
 
-        width:90%;
+        width:100%;
 
-        margin:20px auto 0;
-
-    }
-
-
-    /* Let container center the message */
-
-    .envelope-container {
-
-        height:100vh;
-
-        display:flex;
-
-        justify-content:center;
-
-        align-items:center;
-
-        padding:20px;
+        margin-top:20px;
 
     }
 
 }
 
-}
 }
